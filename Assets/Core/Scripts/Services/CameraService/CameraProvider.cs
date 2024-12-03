@@ -11,6 +11,7 @@ namespace Core.Scripts.Services.CameraService
         [SerializeField, ReadOnly] private CinemachineVirtualCamera m_PlayerCamera;
 
         public Camera MainCamera => m_MainCamera;
+        public CinemachineVirtualCamera PlayerCamera => m_PlayerCamera;
 
         #region Editor
         [Button]

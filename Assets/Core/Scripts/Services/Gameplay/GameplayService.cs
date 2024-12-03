@@ -1,24 +1,42 @@
 using _Gameplay.Scripts.Shooting.Launcher;
+using Core.Scripts.Infrastructure;
+using Core.Scripts.Services.CameraService;
+using Core.Scripts.Services.Input;
 using Core.Scripts.Services.StaticDataService;
+using UnityEngine;
 
 namespace Core.Scripts.Services.Gameplay
 {
     public class GameplayService : IGameplayService
     {
-        private readonly Cannon m_Cannon;
+        private readonly GameplayObjectProvider m_Provider;
+        
+        public Cannon Cannon { get; private set; }
         
         public GameplayService(GameplayObjectProvider gameplayObjectProvider, IServiceLocator serviceLocator)
         {
-            m_Cannon = createCannon(gameplayObjectProvider, serviceLocator);
+            m_Provider = gameplayObjectProvider;
+            
+            ServiceRegistrar.OnRegistered += onOnRegistered;
         }
 
-        private Cannon createCannon(GameplayObjectProvider gameplayObjectProvider, IServiceLocator serviceLocator)
+        private void onOnRegistered(IServiceLocator serviceLocator)
         {
-            var cannonComponent = gameplayObjectProvider.ITrajectoryRenderingContext;
+            Cannon = createCannon(serviceLocator);
+        }
+
+        private Cannon createCannon(IServiceLocator serviceLocator)
+        {
+            var cannonComponent = m_Provider.CannonComponent;
             var gameplayData = serviceLocator.GetSingle<IGameStaticDataService>().GamePlay;
+
+            var playerCamera = serviceLocator.GetSingle<ICameraService>().PlayerCamera;
+            playerCamera.transform.SetParent(cannonComponent.CameraPoint);
+            playerCamera.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             
             return new Cannon(cannonComponent, 
-                gameplayData.PhysicsConfiguration.CreateTrajectoryRenderer(cannonComponent));
+                gameplayData.PhysicsConfiguration.CreateTrajectoryRenderer(cannonComponent),
+                serviceLocator.GetSingle<IInputService>().BaseInput);
         }
     }
 }

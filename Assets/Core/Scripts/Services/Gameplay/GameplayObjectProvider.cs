@@ -6,13 +6,13 @@ namespace Core.Scripts.Services.Gameplay
 {
     public class GameplayObjectProvider : MonoBehaviour
     {
-        [field: SerializeField, ReadOnly] public CannonComponent ITrajectoryRenderingContext { get; private set; }
+        [field: SerializeField, ReadOnly] public CannonComponent CannonComponent { get; private set; }
         
         #region Editor
         [Button]
         private void setRefs()
         {
-            ITrajectoryRenderingContext = GetComponentInChildren<CannonComponent>();
+            CannonComponent = GetComponentInChildren<CannonComponent>(true);
         }
 
         private void OnValidate()

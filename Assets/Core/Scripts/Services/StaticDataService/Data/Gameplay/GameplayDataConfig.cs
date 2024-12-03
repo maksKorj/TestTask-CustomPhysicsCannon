@@ -1,6 +1,4 @@
-﻿using _Gameplay.Scripts.Shooting;
-using _Gameplay.Scripts.Shooting.PhysicsTypes;
-using Sirenix.OdinInspector;
+﻿using _Gameplay.Scripts.Shooting.PhysicsTypes;
 using UnityEngine;
 
 namespace Core.Scripts.Services.StaticDataService.Data.Gameplay
