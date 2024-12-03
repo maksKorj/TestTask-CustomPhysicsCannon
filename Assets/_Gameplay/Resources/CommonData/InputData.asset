@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5cc738e65250d646b2e2776d2ce392f, type: 3}
+  m_Name: InputData
+  m_EditorClassIdentifier: 
+  <DragSensitivity>k__BackingField: {x: 1, y: 1}
+  <CalculateMultiTouch>k__BackingField: 0
+  <IsUseJoystick>k__BackingField: 0
+  <Joystick>k__BackingField:
+    IsShowVisuals: 1
+    IsStatic: 1
+    IsResetDirection: 1
+    Radius: 0.4
+    HandleRadiusMultiplier: 0.6
+  <CheckInteraction>k__BackingField: 0
+  <CheckDragging>k__BackingField: 0
+  <InteractionInputData>k__BackingField:
+    <CheckingDistance>k__BackingField: 40
+    <Interactable>k__BackingField:
+      <LayerMask>k__BackingField:
+        serializedVersion: 2
+        m_Bits: 64
+      <LayerInt>k__BackingField: 6
+    <Overlay>k__BackingField:
+      <LayerMask>k__BackingField:
+        serializedVersion: 2
+        m_Bits: 8
+      <LayerInt>k__BackingField: 3

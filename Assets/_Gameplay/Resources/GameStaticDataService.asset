@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63adf3dd47ea064f97014d323bfaf31, type: 3}
+  m_Name: GameStaticDataService
+  m_EditorClassIdentifier: 
+  <Input>k__BackingField: {fileID: 11400000, guid: 2dbb7ca5d9990004fbedebd0fe865cac, type: 2}
+  <AudioData>k__BackingField: {fileID: 11400000, guid: d25d5c1f8750f264d8f63c9e65bb7974, type: 2}
+  <CollectableData>k__BackingField: {fileID: 11400000, guid: b4c59a28fea46a046ba1fdba8f44dd50, type: 2}
+  <PopupData>k__BackingField: {fileID: 11400000, guid: d121c6e2e1a76364bb4ddc7889d9daf2, type: 2}
+  <GamePlay>k__BackingField: {fileID: 11400000, guid: e7d9287d86a4bc64fb5548f3a8bcfae1, type: 2}

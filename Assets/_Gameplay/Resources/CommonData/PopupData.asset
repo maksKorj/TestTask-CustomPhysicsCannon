@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe2185ac657c004ea0d065ab2d68265, type: 3}
+  m_Name: PopupData
+  m_EditorClassIdentifier: 
+  <FadeInTime>k__BackingField: 0.5
+  <FadeOutTime>k__BackingField: 0.3
+  <SlotVisualData>k__BackingField:
+    <FocusBackground>k__BackingField: {fileID: 21300000, guid: 3794f280dbc1a43e0b04594ca6a1a998, type: 3}
+    <ButtonBackground>k__BackingField:
+      <Active>k__BackingField: {fileID: 21300000, guid: 6a1f2ec1b291243919959448562d19aa, type: 3}
+      <Passive>k__BackingField: {fileID: 21300000, guid: a23a57be640054bf08deecbc33c70a5e, type: 3}
+  <SettingsIconColor>k__BackingField:
+    <Active>k__BackingField: {r: 0.40000004, g: 0.6117647, b: 1, a: 1}
+    <Passive>k__BackingField: {r: 0.3529412, g: 0.427451, b: 0.5647059, a: 1}
+  <RewardButtonDataProvider>k__BackingField:
+    m_Configs:
+    - {fileID: 11400000, guid: b1888e1f9ac0f9f47bc252a23e01cb51, type: 2}
+    - {fileID: 11400000, guid: 925bc43bc4fa10a4ca0bb11445bc54d7, type: 2}
+    - {fileID: 11400000, guid: da92c35ab116cf54bb9330d056bb2a47, type: 2}
