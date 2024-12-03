@@ -1,14 +1,14 @@
-using _Gameplay.Scripts.Shooting.PhysicTypes.Custom;
+using _Gameplay.Scripts.Shooting.PhysicsTypes.Custom;
 
 namespace _Gameplay.Scripts.Shooting.Launcher.TrajectoryRendering.Custom
 {
-    public class CustomPhysicITrajectoryRenderer : ITrajectoryRenderer
+    public class CustomPhysicsTrajectoryRenderer : ITrajectoryRenderer
     {
         private readonly int m_TrajectorySegments;
         private readonly ITrajectoryRenderingContext m_Context;
         private readonly CustomPhysicsSettings m_Settings;
 
-        public CustomPhysicITrajectoryRenderer(int trajectorySegments, ITrajectoryRenderingContext context, CustomPhysicsSettings settings)
+        public CustomPhysicsTrajectoryRenderer(int trajectorySegments, ITrajectoryRenderingContext context, CustomPhysicsSettings settings)
         {
             m_TrajectorySegments = trajectorySegments;
             m_Context = context;

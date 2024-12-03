@@ -3,7 +3,7 @@ using _Gameplay.Scripts.Shooting.Projectiles.Movement;
 using Core.Scripts.Services.TickProcessor;
 using UnityEngine;
 
-namespace _Gameplay.Scripts.Shooting.PhysicTypes
+namespace _Gameplay.Scripts.Shooting.PhysicsTypes
 {
     public abstract class PhysicsConfiguration : ScriptableObject
     {

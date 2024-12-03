@@ -1,4 +1,4 @@
-using _Gameplay.Scripts.Shooting.PhysicTypes.Custom;
+using _Gameplay.Scripts.Shooting.PhysicsTypes.Custom;
 using Core.Scripts.Services.TickProcessor;
 using UnityEngine;
 

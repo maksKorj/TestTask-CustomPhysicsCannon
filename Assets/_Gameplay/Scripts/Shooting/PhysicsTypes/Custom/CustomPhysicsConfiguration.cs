@@ -4,7 +4,7 @@ using _Gameplay.Scripts.Shooting.Projectiles.Movement;
 using Core.Scripts.Services.TickProcessor;
 using UnityEngine;
 
-namespace _Gameplay.Scripts.Shooting.PhysicTypes.Custom
+namespace _Gameplay.Scripts.Shooting.PhysicsTypes.Custom
 {
     [CreateAssetMenu(fileName = nameof(CustomPhysicsConfiguration), menuName = "Gameplay/" + nameof(CustomPhysicsConfiguration), order = 0)]
     public class CustomPhysicsConfiguration : PhysicsConfiguration
@@ -14,7 +14,7 @@ namespace _Gameplay.Scripts.Shooting.PhysicTypes.Custom
         
         public override ITrajectoryRenderer CreateTrajectoryRenderer(ITrajectoryRenderingContext context)
         {
-            return new CustomPhysicITrajectoryRenderer(m_TrajectorySegments, 
+            return new CustomPhysicsTrajectoryRenderer(m_TrajectorySegments, 
                 context, 
                 m_PhysicsSettings);
         }

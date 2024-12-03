@@ -1,4 +1,4 @@
-using _Gameplay.Scripts.Shooting.PhysicTypes;
+using _Gameplay.Scripts.Shooting.PhysicsTypes;
 using Core.Scripts.Services;
 using Core.Scripts.Services.Pool;
 using Core.Scripts.Services.StaticDataService;

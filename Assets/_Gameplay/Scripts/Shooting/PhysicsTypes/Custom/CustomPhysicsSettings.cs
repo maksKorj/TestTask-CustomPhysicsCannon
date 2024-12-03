@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace _Gameplay.Scripts.Shooting.PhysicTypes.Custom
+namespace _Gameplay.Scripts.Shooting.PhysicsTypes.Custom
 {
     [CreateAssetMenu(fileName = nameof(CustomPhysicsSettings), menuName = "Gameplay/" + nameof(CustomPhysicsSettings), order = 0)]
     public class CustomPhysicsSettings : ScriptableObject

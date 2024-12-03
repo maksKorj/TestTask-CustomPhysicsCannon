@@ -1,6 +1,5 @@
 ﻿using _Gameplay.Scripts.Shooting;
-using _Gameplay.Scripts.Shooting.PhysicTypes;
-using _Gameplay.Scripts.Shooting.PhysicTypes.Custom;
+using _Gameplay.Scripts.Shooting.PhysicsTypes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
