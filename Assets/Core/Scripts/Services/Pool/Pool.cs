@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Core.Scripts.Services.Pool.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.Scripts.Services.Pool
 {
@@ -9,7 +10,7 @@ namespace Core.Scripts.Services.Pool
     {
         [Title("PoolData")]
         [SerializeField] private int m_SpawnAmount;
-        [SerializeField] private T m_Preafab;
+        [SerializeField] private T m_Prefab;
 
         [Title("Spawned")]
         [SerializeField, ReadOnly] protected List<T> m_SpawnedEntities;
@@ -20,7 +21,7 @@ namespace Core.Scripts.Services.Pool
         [Button]
         private void fill()
         {
-#if UNITY_EDITOR
+            #if UNITY_EDITOR
             while (transform.childCount != 0)
             {
                 DestroyImmediate(transform.GetChild(0).gameObject);
@@ -29,16 +30,26 @@ namespace Core.Scripts.Services.Pool
             m_SpawnedEntities = new List<T>();
             for (int i = 0; i < m_SpawnAmount; i++)
             {
-                var entity = UnityEditor.PrefabUtility.InstantiatePrefab(m_Preafab, transform) as T;
+                var entity = UnityEditor.PrefabUtility.InstantiatePrefab(m_Prefab, transform) as T;
+                entity.name = $"{m_Prefab.name} ({i})";
                 resetTransform(entity);
 
                 m_SpawnedEntities.Add(entity);
             }
-#endif
+            #endif
         }
         #endregion
 
         #region Init
+        public override void Init(IServiceLocator serviceLocator)
+        {
+            base.Init(serviceLocator);
+            foreach (var entity in m_SpawnedEntities)
+            {
+                initCreatedInstance(entity);
+            }
+        }
+
         private void OnEnable()
         {
             ResetPool();
@@ -69,13 +80,11 @@ namespace Core.Scripts.Services.Pool
 
         public T GetPoolable()
         {
-            if (m_Entities.Count == 0)
-            {
-                T createdInstance = createInstance();
-                return createdInstance;
-            }
-
-            return m_Entities.Pop();
+            if (m_Entities.Count != 0) 
+                return m_Entities.Pop();
+            
+            var createdInstance = createInstance();
+            return createdInstance;
         }
 
         public override void ResetPool()
@@ -90,7 +99,7 @@ namespace Core.Scripts.Services.Pool
 
         private T createInstance()
         {
-            var spawnedEntity = Instantiate(m_Preafab, transform);
+            var spawnedEntity = Instantiate(m_Prefab, transform);
 
             resetTransform(spawnedEntity);
             initCreatedInstance(spawnedEntity);

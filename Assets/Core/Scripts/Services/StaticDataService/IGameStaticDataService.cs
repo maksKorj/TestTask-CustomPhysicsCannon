@@ -1,5 +1,4 @@
-﻿using Core.Scripts.Services.StaticDataService.Data;
-using Core.Scripts.Services.StaticDataService.Data.Audio;
+﻿using Core.Scripts.Services.StaticDataService.Data.Audio;
 using Core.Scripts.Services.StaticDataService.Data.Gameplay;
 using Core.Scripts.Services.StaticDataService.Data.Input;
 using Core.Scripts.Services.StaticDataService.Data.PopupData;

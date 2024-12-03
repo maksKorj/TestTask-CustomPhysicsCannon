@@ -28,11 +28,11 @@ namespace Core.Scripts.Infrastructure
 
         public void RegisterServices(ServiceLocator serviceLocator, out ResettableService resettableService)
         {
-            var gameStaticDataService = registerGameStaticDataService(serviceLocator);
-
             serviceLocator.RegisterSingle<ICameraService>(new CameraService(m_ComponentsProvider.CameraProvider))
                 .RegisterSingle(m_ComponentsProvider.TickProcessorService);
 
+            var gameStaticDataService = registerGameStaticDataService(serviceLocator);
+            
             resettableService = new ResettableService();
             registerAudioService(serviceLocator, gameStaticDataService.AudioData);
             registerPoolService(serviceLocator);
