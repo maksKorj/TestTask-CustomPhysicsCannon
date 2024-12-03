@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Core.Scripts.Infrastructure.GameStateMachine.Base;
 using Core.Scripts.Infrastructure.GameStateMachine.States;
-using Core.Scripts.Infrastructure.GameStateMachine.States.OutcomeStages;
 using Core.Scripts.Services;
 using Core.Scripts.Utilities;
 using UnityEngine;
@@ -22,9 +21,7 @@ namespace Core.Scripts.Infrastructure.GameStateMachine
                 [typeof(ResetState)] = new ResetState(this, serviceLocator),
                 [typeof(LoadState)] = new LoadState(this, serviceLocator),
                 [typeof(IdleState)] = new IdleState(this),
-                [typeof(ActiveGameplayState)] = new ActiveGameplayState(this, serviceLocator),
-                [typeof(WinState)] = new WinState(this, serviceLocator),
-                [typeof(FailState)] = new FailState(this, serviceLocator)
+                [typeof(ActiveGameplayState)] = new ActiveGameplayState(this, serviceLocator)
             };
 
             m_StateProvider = new EntityProvider<IExitableState>(states);

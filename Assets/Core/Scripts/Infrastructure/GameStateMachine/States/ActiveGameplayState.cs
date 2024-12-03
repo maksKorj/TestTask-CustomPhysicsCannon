@@ -1,5 +1,4 @@
 ﻿using Core.Scripts.Infrastructure.GameStateMachine.Base;
-using Core.Scripts.Infrastructure.GameStateMachine.States.OutcomeStages;
 using Core.Scripts.Services;
 using Core.Scripts.Services.Input;
 using Core.Scripts.Services.Level;
@@ -58,12 +57,12 @@ namespace Core.Scripts.Infrastructure.GameStateMachine.States
 
         private void onLevelCompleted()
         {
-            m_GameStateMachine.Enter<WinState>();
+            //m_GameStateMachine.Enter<WinState>();
         }
 
         private void onLevelFailed()
         {
-            m_GameStateMachine.Enter<FailState>();
+            //m_GameStateMachine.Enter<FailState>();
         }
         #endregion
 
