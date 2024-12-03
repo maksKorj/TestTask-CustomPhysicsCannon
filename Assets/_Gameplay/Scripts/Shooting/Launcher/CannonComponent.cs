@@ -1,5 +1,5 @@
-using _Gameplay.Scripts.Shooting.Launcher.Controlling;
-using _Gameplay.Scripts.Shooting.Launcher.Controlling.Data;
+using _Gameplay.Scripts.Shooting.Launcher.MovementControlling;
+using _Gameplay.Scripts.Shooting.Launcher.MovementControlling.Data;
 using _Gameplay.Scripts.Shooting.Launcher.TrajectoryRendering;
 using Core.Scripts.Extensions;
 using Sirenix.OdinInspector;
@@ -9,6 +9,7 @@ namespace _Gameplay.Scripts.Shooting.Launcher
 {
     public class CannonComponent : MonoBehaviour, ITrajectoryRenderingContext, IMovementControlContext
     {
+        [field: SerializeField] public float ProjectileMaxPower { get; private set; } = 50f;
         [field: SerializeField] public MovementControlSettings MovementControlSettings { get; private set; }
         
         [field: Title("Components")]
@@ -18,7 +19,7 @@ namespace _Gameplay.Scripts.Shooting.Launcher
         [field: SerializeField, ReadOnly] public Transform CameraPoint {get; private set;}
 
         public Transform Transform => transform;
-        
+
         #region Editor
         [Button]
         private void setRefs()
@@ -34,5 +35,12 @@ namespace _Gameplay.Scripts.Shooting.Launcher
             setRefs();
         }
         #endregion
+
+        public void SetupLineRenderer()
+        {
+            var lineRenderer = LineRenderer.transform;
+            lineRenderer.parent = transform.parent;
+            lineRenderer.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        }
     }
 }

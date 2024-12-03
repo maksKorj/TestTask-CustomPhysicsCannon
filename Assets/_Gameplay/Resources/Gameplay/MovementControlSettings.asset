@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MovementControlSettings
   m_EditorClassIdentifier: 
   <Vertical>k__BackingField:
-    <Speed>k__BackingField: 50
+    <Speed>k__BackingField: 75
     <Restriction>k__BackingField:
-      <Min>k__BackingField: -60
+      <Min>k__BackingField: -45
       <Max>k__BackingField: 20
   <Horizontal>k__BackingField:
     <Speed>k__BackingField: 25

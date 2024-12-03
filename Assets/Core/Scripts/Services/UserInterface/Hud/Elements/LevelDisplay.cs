@@ -20,9 +20,9 @@ namespace Core.Scripts.Services.UserInterface.Hud.Elements
             m_LevelDisplay.text = k_LevelStringFormat.Formatted(level);
         }
 
-        public void SetActive(bool value)
+        public void SetActive(bool active)
         {
-            m_LevelDisplay.gameObject.SetActive(value);
+            m_LevelDisplay.gameObject.SetActive(active);
         }
     }
 }

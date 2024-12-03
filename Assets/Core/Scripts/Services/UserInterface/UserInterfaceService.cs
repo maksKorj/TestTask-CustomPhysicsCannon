@@ -18,7 +18,7 @@ namespace Core.Scripts.Services.UserInterface
             var popupService = new PopupService(serviceLocator, provider.PopupComponentProvider.Popups);
             PopupService = popupService;
 
-            HudService = new HudService(provider.HudComponentProvider, popupService);
+            HudService = new HudService(provider.HudComponentProvider);
             
             CanvasProvider = provider.CanvasProvider;
             TransitionCurtain = provider.TransitionCurtain;

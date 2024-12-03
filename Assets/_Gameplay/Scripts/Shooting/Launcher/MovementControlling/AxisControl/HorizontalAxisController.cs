@@ -1,7 +1,7 @@
-using _Gameplay.Scripts.Shooting.Launcher.Controlling.Data;
+using _Gameplay.Scripts.Shooting.Launcher.MovementControlling.Data;
 using UnityEngine;
 
-namespace _Gameplay.Scripts.Shooting.Launcher.Controlling.AxisControl
+namespace _Gameplay.Scripts.Shooting.Launcher.MovementControlling.AxisControl
 {
     public class HorizontalAxisController : MovementAxisController
     {

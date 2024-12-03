@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Gameplay.Scripts.Shooting.Launcher.Controlling.Data
+namespace _Gameplay.Scripts.Shooting.Launcher.MovementControlling.Data
 {
     [CreateAssetMenu(fileName = nameof(MovementControlSettings), menuName = "Gameplay/" + nameof(MovementControlSettings))]
     public class MovementControlSettings : ScriptableObject

@@ -1,11 +1,10 @@
-using _Gameplay.Scripts.Shooting.Launcher.Controlling.AxisControl;
-using _Gameplay.Scripts.Shooting.Launcher.Controlling.Data;
+using _Gameplay.Scripts.Shooting.Launcher.MovementControlling.AxisControl;
 using Core.Scripts.Services.Input.Modules.SimpleInput;
 using UnityEngine;
 
-namespace _Gameplay.Scripts.Shooting.Launcher.Controlling
+namespace _Gameplay.Scripts.Shooting.Launcher.MovementControlling
 {
-    public class MovementControl
+    public class MovementControl : ICannonControl
     {
         private readonly IBaseInput m_Input;
         private readonly MovementAxisController[] m_AxisControls;
@@ -34,8 +33,9 @@ namespace _Gameplay.Scripts.Shooting.Launcher.Controlling
 
         private void onDrag(Vector2 drag)
         {
+            var normalizedDrag = drag.normalized;
             foreach (var control in m_AxisControls)
-                control.OnDrag(drag);
+                control.OnDrag(normalizedDrag);
         }
     }
 }

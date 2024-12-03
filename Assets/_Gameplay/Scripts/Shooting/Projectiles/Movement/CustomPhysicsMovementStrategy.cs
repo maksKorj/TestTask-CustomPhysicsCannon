@@ -43,14 +43,14 @@ namespace _Gameplay.Scripts.Shooting.Projectiles.Movement
                 if (Physics.Linecast(m_Transform.position, nextPosition, out var hit, m_Settings.CollisionMask))
                 {
                     handleCollision(hit);
-                    remainingTime -= step;
                 }
                 else
                 {
                     m_Transform.position = nextPosition;
                     m_Velocity += m_Settings.Gravity * step;
-                    remainingTime -= step;
                 }
+                
+                remainingTime -= step;
             }
         }
 

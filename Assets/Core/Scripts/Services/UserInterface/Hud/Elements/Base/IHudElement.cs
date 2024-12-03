@@ -2,6 +2,6 @@
 {
     public interface IHudElement
     {
-        public void SetActive(bool value);
+        public void SetActive(bool active);
     }
 }

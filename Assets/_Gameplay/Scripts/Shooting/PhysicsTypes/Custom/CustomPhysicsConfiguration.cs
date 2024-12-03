@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace _Gameplay.Scripts.Shooting.PhysicsTypes.Custom
 {
-    [CreateAssetMenu(fileName = nameof(CustomPhysicsConfiguration), menuName = "Gameplay/" + nameof(CustomPhysicsConfiguration), order = 0)]
+    [CreateAssetMenu(fileName = nameof(CustomPhysicsConfiguration), menuName = "Gameplay/CustomPhysics/" + nameof(CustomPhysicsConfiguration), order = 0)]
     public class CustomPhysicsConfiguration : PhysicsConfiguration
     {
         [SerializeField] private int m_TrajectorySegments = 30;

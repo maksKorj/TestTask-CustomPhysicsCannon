@@ -178,7 +178,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7107219818456319508}
   - component: {fileID: 2452202346522048256}
-  - component: {fileID: 4278450437179438069}
   - component: {fileID: 7107219818456319531}
   - component: {fileID: 7107219818456319530}
   - component: {fileID: 7107219818456319529}
@@ -225,19 +224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Canvas>k__BackingField: {fileID: 7107219818456319531}
   <Scaler>k__BackingField: {fileID: 7107219818456319530}
---- !u!114 &4278450437179438069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7107219818456319528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e3e86dada864b8d82fea14479d3036, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CanvasScaler: {fileID: 7107219818456319530}
 --- !u!223 &7107219818456319531
 Canvas:
   m_ObjectHideFlags: 0
@@ -276,7 +262,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

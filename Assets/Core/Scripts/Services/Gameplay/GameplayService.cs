@@ -33,10 +33,12 @@ namespace Core.Scripts.Services.Gameplay
             var playerCamera = serviceLocator.GetSingle<ICameraService>().PlayerCamera;
             playerCamera.transform.SetParent(cannonComponent.CameraPoint);
             playerCamera.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+
+            cannonComponent.SetupLineRenderer();
             
             return new Cannon(cannonComponent, 
                 gameplayData.PhysicsConfiguration.CreateTrajectoryRenderer(cannonComponent),
-                serviceLocator.GetSingle<IInputService>().BaseInput);
+                serviceLocator);
         }
     }
 }

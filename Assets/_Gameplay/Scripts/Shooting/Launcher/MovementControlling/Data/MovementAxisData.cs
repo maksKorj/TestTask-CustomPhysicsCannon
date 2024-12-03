@@ -2,7 +2,7 @@ using System;
 using Core.Scripts.Utilities;
 using UnityEngine;
 
-namespace _Gameplay.Scripts.Shooting.Launcher.Controlling.Data
+namespace _Gameplay.Scripts.Shooting.Launcher.MovementControlling.Data
 {
     [Serializable]
     public class MovementAxisData

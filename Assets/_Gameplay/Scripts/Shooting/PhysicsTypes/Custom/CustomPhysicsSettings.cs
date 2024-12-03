@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Gameplay.Scripts.Shooting.PhysicsTypes.Custom
 {
-    [CreateAssetMenu(fileName = nameof(CustomPhysicsSettings), menuName = "Gameplay/" + nameof(CustomPhysicsSettings), order = 0)]
+    [CreateAssetMenu(fileName = nameof(CustomPhysicsSettings), menuName = "Gameplay/CustomPhysics/" + nameof(CustomPhysicsSettings), order = 0)]
     public class CustomPhysicsSettings : ScriptableObject
     {
         [field: Title("")]
