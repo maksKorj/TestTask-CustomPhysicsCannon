@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121abd410a8949808eed2c5a706e1b31, type: 3}
   m_Name: CustomPhysicsSettings
   m_EditorClassIdentifier: 
-  <Gravity>k__BackingField: {x: 0, y: -9.81, z: 0}
+  <Gravity>k__BackingField: {x: 0, y: -30, z: 0}
   <Bounciness>k__BackingField: 0.8
   <TimeStep>k__BackingField: 0.02
   <CollisionMask>k__BackingField:

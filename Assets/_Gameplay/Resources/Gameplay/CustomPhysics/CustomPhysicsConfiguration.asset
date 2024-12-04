@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f570effbb984baf8ffa1a1caba1e6f6, type: 3}
   m_Name: CustomPhysicsConfiguration
   m_EditorClassIdentifier: 
-  m_TrajectorySegments: 150
+  m_TrajectorySegments: 225
   m_PhysicsSettings: {fileID: 11400000, guid: 068a222290af14172a1374dd4435c722, type: 2}

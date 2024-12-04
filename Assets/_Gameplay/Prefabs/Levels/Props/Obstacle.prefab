@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058f5bd7123f45f2b9195b6f32c560cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BounceMultiplier>k__BackingField: 1
+  <BounceMultiplier>k__BackingField: 0.1
   m_MarkTexture: {fileID: 2800000, guid: 6d893e31816482e4ab7403749dfbc748, type: 3}
   m_MarkSize: 0.1
   m_MeshRenderer: {fileID: 4213453950596932183}
