@@ -16,7 +16,6 @@ namespace Core.Scripts.Services.UserInterface.Hud
         {
             var elements = new Dictionary<Type, IHudElement>
             {
-                [typeof(LevelDisplay)] = new LevelDisplay(hudProvider.LevelDisplay),
                 [typeof(PowerControl)] = new PowerControl(hudProvider.PowerControlComponent)
             };
 

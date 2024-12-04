@@ -1,6 +1,8 @@
 using _Gameplay.Scripts.Effects;
 using _Gameplay.Scripts.Shooting.PhysicsTypes;
 using Core.Scripts.Services;
+using Core.Scripts.Services.Audio;
+using Core.Scripts.Services.Audio.AudioPlayers;
 using Core.Scripts.Services.Pool;
 using Core.Scripts.Services.StaticDataService;
 using Core.Scripts.Services.TickProcessor;
@@ -12,13 +14,14 @@ namespace _Gameplay.Scripts.Shooting.Projectiles
         private PhysicsConfiguration m_PhysicsConfiguration;
         private ITickProcessorService m_TickProcessorService;
         private GenericEffectPool m_EffectPool;
+        private SoundEffectPlayer m_SoundEffectPlayer;
         
         public override void Init(IServiceLocator serviceLocator)
         {
             m_PhysicsConfiguration = serviceLocator.GetSingle<IGameStaticDataService>().GamePlay.PhysicsConfiguration;
             m_TickProcessorService = serviceLocator.GetSingle<ITickProcessorService>();
             m_EffectPool = serviceLocator.GetSingle<IPoolService>().GetPool<GenericEffectPool>();
-
+            m_SoundEffectPlayer = serviceLocator.GetSingle<IAudioService>().SoundEffectPlayer;
 
             base.Init(serviceLocator);
         }
@@ -28,7 +31,7 @@ namespace _Gameplay.Scripts.Shooting.Projectiles
             var movementStrategy = m_PhysicsConfiguration.CreateMovementStrategy(spawnedEntity.transform, 
                 m_TickProcessorService);
             
-            spawnedEntity.Init(movementStrategy, m_EffectPool);
+            spawnedEntity.Init(movementStrategy, m_EffectPool, m_SoundEffectPlayer);
         }
     }
 }

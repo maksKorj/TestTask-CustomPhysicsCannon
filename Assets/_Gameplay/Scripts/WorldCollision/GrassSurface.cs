@@ -7,6 +7,7 @@ namespace _Gameplay.Scripts.WorldCollision
     {
         public override void Collide(RaycastHit hit)
         {
+            m_SoundEffectPlayer.TryPlay(m_SoundEffectPlayer.Sounds.HitGrass);
             playEffect(hit, GenericEffect.EntityType.Grass);
         }
     }

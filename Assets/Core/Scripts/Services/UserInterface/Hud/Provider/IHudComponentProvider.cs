@@ -5,7 +5,6 @@ namespace Core.Scripts.Services.UserInterface.Hud.Provider
 {
     public interface IHudComponentProvider
     {
-        public TextMeshProUGUI LevelDisplay { get; }
         public PowerControlComponent PowerControlComponent { get; }
     }
 }

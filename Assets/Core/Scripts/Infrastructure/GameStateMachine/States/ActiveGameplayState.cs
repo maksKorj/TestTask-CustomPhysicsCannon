@@ -14,7 +14,6 @@ namespace Core.Scripts.Infrastructure.GameStateMachine.States
 
         private readonly ILevelService m_LevelService;
         private readonly IInputService m_InputService;
-        private readonly LevelDisplay m_LevelDisplay;
 
         private LevelBase m_CurrentLevel;
 
@@ -24,9 +23,6 @@ namespace Core.Scripts.Infrastructure.GameStateMachine.States
 
             m_LevelService = serviceLocator.GetSingle<ILevelService>();
             m_InputService = serviceLocator.GetSingle<IInputService>();
-
-            var uiService = serviceLocator.GetSingle<IUserInterfaceService>();
-            m_LevelDisplay = uiService.HudService.GetElement<LevelDisplay>();
         }
 
         public void Enter()
@@ -42,7 +38,6 @@ namespace Core.Scripts.Infrastructure.GameStateMachine.States
         public void Exit()
         {
             m_InputService.SetActive(false);
-            m_LevelDisplay.SetActive(false);
 
             m_CurrentLevel.OnGameplayEnded -= onGameplayEnded;
             m_CurrentLevel.OnCompleted -= onLevelCompleted;
@@ -68,9 +63,6 @@ namespace Core.Scripts.Infrastructure.GameStateMachine.States
 
         private void onActive()
         {
-            m_LevelDisplay.SetActive(true);
-            m_LevelDisplay.UpdateLevel(m_LevelService.CurrentLevel);
-
             m_CurrentLevel.OnGameplayEnded += onGameplayEnded;
             m_CurrentLevel.OnCompleted += onLevelCompleted;
             m_CurrentLevel.OnFailed += onLevelFailed;

@@ -1,3 +1,4 @@
+using _Gameplay.Scripts.Shooting.Launcher.Animation;
 using _Gameplay.Scripts.Shooting.Launcher.Firing;
 using _Gameplay.Scripts.Shooting.Launcher.MovementControlling;
 using _Gameplay.Scripts.Shooting.Launcher.PowerControlling;
@@ -25,7 +26,7 @@ namespace _Gameplay.Scripts.Shooting.Launcher
         public float CurrentPower { get; private set; }
         
         #region Init
-        public Cannon(CannonComponent component, ITrajectoryRenderer trajectoryRenderer, IServiceLocator serviceLocator)
+        public Cannon(CannonComponent component, ILauncherAnimator animator, ITrajectoryRenderer trajectoryRenderer, IServiceLocator serviceLocator)
         {
             m_Component = component;
             m_TrajectoryRenderer = trajectoryRenderer;
@@ -35,15 +36,16 @@ namespace _Gameplay.Scripts.Shooting.Launcher
             m_Controls = new ICannonControl[]
             {
                 new MovementControl(input, component),
-                createLaunchControl(serviceLocator, input)
+                createLaunchControl(serviceLocator, input, animator)
             };
             m_PowerControl = serviceLocator.GetSingle<IUserInterfaceService>().HudService.GetElement<PowerControl>();
             m_TickProcessorService = serviceLocator.GetSingle<ITickProcessorService>();
         }
 
-        private LaunchControl createLaunchControl(IServiceLocator serviceLocator, IBaseInput input)
+        private LaunchControl createLaunchControl(IServiceLocator serviceLocator, IBaseInput input, ILauncherAnimator animator)
         {
             return new LaunchControl(m_Component.FirePoint, 
+                animator,
                 this,
                 input, 
                 serviceLocator.GetSingle<IPoolService>().GetPool<ProjectilePool>());

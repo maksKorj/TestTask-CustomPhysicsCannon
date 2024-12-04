@@ -10,6 +10,7 @@ namespace _Gameplay.Scripts.Shooting.Launcher
     public class CannonComponent : MonoBehaviour, ITrajectoryRenderingContext, IMovementControlContext
     {
         [field: SerializeField] public float ProjectileMaxPower { get; private set; } = 50f;
+        [field: SerializeField] public float CameraShakeAmplitude { get; private set; } = 3f;
         [field: SerializeField] public MovementControlSettings MovementControlSettings { get; private set; }
         
         [field: Title("Components")]
@@ -17,6 +18,7 @@ namespace _Gameplay.Scripts.Shooting.Launcher
         [field: SerializeField, ReadOnly] public Transform FirePoint {get; private set;}
         [field: SerializeField, ReadOnly] public LineRenderer LineRenderer {get; private set;}
         [field: SerializeField, ReadOnly] public Transform CameraPoint {get; private set;}
+        [field: SerializeField, ReadOnly] public ParticleSystem LaunchVFX {get; private set;}
 
         public Transform Transform => transform;
 
@@ -28,6 +30,7 @@ namespace _Gameplay.Scripts.Shooting.Launcher
             FirePoint = transform.FindDeepChild("FirePoint");
             LineRenderer = GetComponentInChildren<LineRenderer>(true);
             CameraPoint = transform.FindDeepChild("CameraPoint");
+            LaunchVFX = GetComponentInChildren<ParticleSystem>(true);
         }
 
         private void OnValidate()

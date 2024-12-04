@@ -8,14 +8,12 @@ namespace Core.Scripts.Services.UserInterface.Hud.Provider
 {
     public class HudComponentProvider : MonoBehaviour, IHudComponentProvider
     {
-        [field: SerializeField, ReadOnly] public TextMeshProUGUI LevelDisplay { get; private set; }
         [field: SerializeField, ReadOnly] public PowerControlComponent PowerControlComponent{ get; private set; }
 
         #region Editor
         [Button]
         private void setRefs()
         {
-            LevelDisplay = transform.FindDeepChild<TextMeshProUGUI>("LevelDisplay");
             PowerControlComponent = transform.GetComponentInChildren<PowerControlComponent>(true);
         }
 
