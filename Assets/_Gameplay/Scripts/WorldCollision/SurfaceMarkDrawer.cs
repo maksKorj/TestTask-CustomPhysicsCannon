@@ -32,7 +32,7 @@ namespace _Gameplay.Scripts.WorldCollision
         
         private void Awake()
         {
-            m_RenderTexture = new RenderTexture(256, 256, 24); 
+            m_RenderTexture = new RenderTexture(512, 512, 24); 
             m_RenderTexture.Create();
 
             m_MeshRenderer.material.SetTexture(m_RenderTextruePath, m_RenderTexture);

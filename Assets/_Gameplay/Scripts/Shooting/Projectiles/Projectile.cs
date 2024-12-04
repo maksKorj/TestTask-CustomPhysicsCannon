@@ -1,4 +1,5 @@
 using System;
+using _Gameplay.Scripts.Effects;
 using _Gameplay.Scripts.Shooting.Projectiles.Geometry;
 using _Gameplay.Scripts.Shooting.Projectiles.Movement;
 using _Gameplay.Scripts.WorldCollision;
@@ -16,6 +17,7 @@ namespace _Gameplay.Scripts.Shooting.Projectiles
         
         private IMovementStrategy m_MovementStrategy;
         private IGeometryProcessor m_GeometryProcessor;
+        private GenericEffectPool m_EffectPool;
 
         private int m_BounceAmountBeforeKill;
         private Tween m_Timer;
@@ -34,9 +36,11 @@ namespace _Gameplay.Scripts.Shooting.Projectiles
         #endregion
         
         #region Init
-        public void Init(IMovementStrategy movementStrategy)
+        public void Init(IMovementStrategy movementStrategy, GenericEffectPool genericEffectPool)
         {
             m_MovementStrategy = movementStrategy;
+            m_EffectPool =genericEffectPool;
+
             m_GeometryProcessor = m_Config.CreateGeometryProcessor(m_MeshFilter);
         }
 
@@ -58,6 +62,10 @@ namespace _Gameplay.Scripts.Shooting.Projectiles
         #region Callbacks
         private void explode()
         {
+            var effect = m_EffectPool.GetPoolable();
+            effect.transform.position = transform.position;
+            effect.Play(GenericEffect.EntityType.Explosion);
+
             takeBack();
         }
         

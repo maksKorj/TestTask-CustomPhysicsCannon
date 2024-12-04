@@ -15,7 +15,7 @@ namespace Core.Scripts.Services.Pool
         [Title("Spawned")]
         [SerializeField, ReadOnly] protected List<T> m_SpawnedEntities;
 
-        private readonly Stack<T> m_Entities = new();
+        private readonly Queue<T> m_Entities = new();
 
         #region Editor
         [Button]
@@ -74,14 +74,14 @@ namespace Core.Scripts.Services.Pool
             if (m_Entities.Contains(target))
                 return;
 
-            m_Entities.Push(target);
+            m_Entities.Enqueue(target);
         }
         #endregion
 
         public T GetPoolable()
         {
             if (m_Entities.Count != 0) 
-                return m_Entities.Pop();
+                return m_Entities.Dequeue();
             
             var createdInstance = createInstance();
             return createdInstance;
