@@ -1,5 +1,6 @@
 using _Gameplay.Scripts.Shooting.Launcher.TrajectoryRendering;
 using _Gameplay.Scripts.Shooting.Launcher.TrajectoryRendering.Custom;
+using _Gameplay.Scripts.Shooting.Projectiles.CollisionDetection;
 using _Gameplay.Scripts.Shooting.Projectiles.Movement;
 using Core.Scripts.Services.TickProcessor;
 using UnityEngine;
@@ -21,9 +22,14 @@ namespace _Gameplay.Scripts.Shooting.PhysicsTypes.Custom
 
         public override IMovementStrategy CreateMovementStrategy(Transform projectileTransform, ITickProcessorService tickProcessorService)
         {
+            var collisionDetector = new CustomCollisionDetector(projectileTransform,
+                projectileTransform.GetComponentInChildren<MeshFilter>(), 
+                m_PhysicsSettings.CollisionMask);
+            
             return new CustomPhysicsMovementStrategy(projectileTransform, 
                 m_PhysicsSettings, 
-                tickProcessorService);
+                tickProcessorService,
+                collisionDetector);
         }
     }
 }

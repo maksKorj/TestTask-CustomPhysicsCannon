@@ -49,6 +49,8 @@ namespace _Gameplay.Scripts.Shooting.Projectiles
         {
             m_Timer?.Kill();
             m_MovementStrategy.OnCollided -= onOnCollided;
+            
+            m_MovementStrategy.Stop();
         }
         #endregion
 

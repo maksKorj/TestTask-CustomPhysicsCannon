@@ -8,5 +8,6 @@ namespace _Gameplay.Scripts.Shooting.Projectiles.Movement
         public event Action OnCollided;
         
         public void Launch(Vector3 velocity);
+        public void Stop();
     }
 }
