@@ -1,6 +1,7 @@
 using System;
 using _Gameplay.Scripts.Shooting.PhysicsTypes.Custom;
 using _Gameplay.Scripts.Shooting.Projectiles.CollisionDetection;
+using _Gameplay.Scripts.WorldCollision;
 using Core.Scripts.Services.TickProcessor;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ namespace _Gameplay.Scripts.Shooting.Projectiles.Movement
 
         private Vector3 m_Velocity;
         
-        public event Action OnCollided;
+        public event Action<RaycastHit, ICollisionObject> OnCollided;
 
         public CustomPhysicsMovementStrategy(Transform transform, CustomPhysicsSettings settings, ITickProcessorService tickProcessorService, ICollisionDetector collisionDetector)
         {
@@ -70,10 +71,14 @@ namespace _Gameplay.Scripts.Shooting.Projectiles.Movement
 
         private void handleCollision(RaycastHit hit)
         {
-            m_Velocity = Vector3.Reflect(m_Velocity, hit.normal) * m_Settings.Bounciness;
+            float bounceMultiplier = 1;
+            if(hit.collider.TryGetComponent(out ICollisionObject collisionObject))
+                bounceMultiplier = collisionObject.BounceMultiplier;
+            
+            m_Velocity = Vector3.Reflect(m_Velocity, hit.normal) * (m_Settings.Bounciness * bounceMultiplier);
             m_Transform.position = m_CollisionDetector.CalculateNextPosition(hit);
 
-            OnCollided?.Invoke();
+            OnCollided?.Invoke(hit, collisionObject);
         }
 
         

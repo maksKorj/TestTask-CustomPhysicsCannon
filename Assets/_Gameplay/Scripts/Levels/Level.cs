@@ -12,6 +12,10 @@ namespace _Gameplay.Scripts.Levels
             : base(levelComponent, serviceLocator)
         {
             m_GameplayService = serviceLocator.GetSingle<IGameplayService>();
+            foreach (var actor in levelComponent.Actors)
+            {
+                actor.Init(serviceLocator);
+            }
         }
 
         public override void OnLoad()

@@ -1,6 +1,7 @@
 using System;
 using _Gameplay.Scripts.Shooting.Projectiles.Geometry;
 using _Gameplay.Scripts.Shooting.Projectiles.Movement;
+using _Gameplay.Scripts.WorldCollision;
 using Core.Scripts.Services.Pool.Base;
 using DG.Tweening;
 using Sirenix.OdinInspector;
@@ -60,11 +61,13 @@ namespace _Gameplay.Scripts.Shooting.Projectiles
             takeBack();
         }
         
-        private void onOnCollided()
+        private void onOnCollided(RaycastHit hit, ICollisionObject collisionObject)
         {
             m_BounceAmountBeforeKill--;
             if(m_BounceAmountBeforeKill < 0)
                 explode();
+            
+            collisionObject?.Collide(hit);
         }
         #endregion
 

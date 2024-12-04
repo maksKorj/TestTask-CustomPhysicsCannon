@@ -16,7 +16,7 @@ MonoBehaviour:
     <Speed>k__BackingField: 75
     <Restriction>k__BackingField:
       <Min>k__BackingField: -45
-      <Max>k__BackingField: 20
+      <Max>k__BackingField: 10
   <Horizontal>k__BackingField:
     <Speed>k__BackingField: 25
     <Restriction>k__BackingField:
