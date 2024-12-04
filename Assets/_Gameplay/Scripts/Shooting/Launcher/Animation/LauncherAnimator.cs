@@ -44,7 +44,7 @@ namespace _Gameplay.Scripts.Shooting.Launcher.Animation
             if(m_CameraShakeTween.IsActive())
                 return;
 
-            m_CameraShakeTween = DOVirtual.Float(0, m_Component.CameraShakeAmplitude, 0.5f, (value) =>
+            m_CameraShakeTween = DOVirtual.Float(m_Component.CameraShakeAmplitude, 0, 0.5f, (value) =>
             {
                 m_BasicMultiChannelPerlin.m_AmplitudeGain = value;
             }).OnComplete(() =>

@@ -1,4 +1,3 @@
-using System;
 using _Gameplay.Scripts.Effects;
 using _Gameplay.Scripts.Shooting.Projectiles.Geometry;
 using _Gameplay.Scripts.Shooting.Projectiles.Movement;
@@ -59,7 +58,6 @@ namespace _Gameplay.Scripts.Shooting.Projectiles
             transform.DOKill();
             
             m_MovementStrategy.OnCollided -= onOnCollided;
-            
             m_MovementStrategy.Stop();
         }
         #endregion
@@ -85,6 +83,7 @@ namespace _Gameplay.Scripts.Shooting.Projectiles
         public void Launch(Vector3 velocity)
         {
             m_BounceAmountBeforeKill = m_Config.BounceAmountBeforeKill;
+            m_GeometryProcessor.Reset();
 
             transform.localScale = Vector3.one * 0.25f;
             gameObject.SetActive(true);

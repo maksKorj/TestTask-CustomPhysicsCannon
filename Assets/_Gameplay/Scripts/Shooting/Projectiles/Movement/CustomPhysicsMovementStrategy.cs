@@ -80,7 +80,5 @@ namespace _Gameplay.Scripts.Shooting.Projectiles.Movement
 
             OnCollided?.Invoke(hit, collisionObject);
         }
-
-        
     }
 }

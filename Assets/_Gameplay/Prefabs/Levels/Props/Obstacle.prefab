@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <BounceMultiplier>k__BackingField: 1
-  m_MarkTexture: {fileID: 2800000, guid: b27bada2693ab534db597e92bf5cc8fe, type: 3}
+  m_MarkTexture: {fileID: 2800000, guid: 6d893e31816482e4ab7403749dfbc748, type: 3}
   m_MarkSize: 0.1
   m_MeshRenderer: {fileID: 2343137698989089545}
 --- !u!33 &7755461019152613232
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <BounceMultiplier>k__BackingField: 1
-  m_MarkTexture: {fileID: 2800000, guid: b27bada2693ab534db597e92bf5cc8fe, type: 3}
+  m_MarkTexture: {fileID: 2800000, guid: 6d893e31816482e4ab7403749dfbc748, type: 3}
   m_MarkSize: 0.1
   m_MeshRenderer: {fileID: 4213453950596932183}
 --- !u!33 &7493610728942455619

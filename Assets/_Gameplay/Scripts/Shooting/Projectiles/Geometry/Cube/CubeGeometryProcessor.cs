@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Gameplay.Scripts.Shooting.Projectiles.Geometry.Cube
@@ -22,7 +21,10 @@ namespace _Gameplay.Scripts.Shooting.Projectiles.Geometry.Cube
             m_Vertices = m_Geometry.CreateVertices();
             m_TargetOffsets = new Vector3[m_Vertices.Length];
             m_CurrentOffsets = new Vector3[m_Vertices.Length];
+        }
 
+        public void Reset()
+        {
             for (int i = 0; i < m_Vertices.Length; i++)
             {
                 m_TargetOffsets[i] = GetRandomOffset();
