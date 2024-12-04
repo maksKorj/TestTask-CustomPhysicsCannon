@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CubeSettings
   m_EditorClassIdentifier: 
   <TimeBetweenDeformation>k__BackingField: 0.5
-  <Size>k__BackingField: 3
-  <VertexOffsetRange>k__BackingField: 0.2
+  <Size>k__BackingField: 4
+  <VertexOffsetRange>k__BackingField: 0.5
