@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410f00190bf240bebe81cd3470720c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ProjectileMaxPower>k__BackingField: 30
+  <ProjectileMaxPower>k__BackingField: 60
   <MovementControlSettings>k__BackingField: {fileID: 11400000, guid: fbb30718536194d9fbf0f31abd68496d, type: 2}
   <Barrel>k__BackingField: {fileID: 4993269422288048303}
   <FirePoint>k__BackingField: {fileID: 7694446339480122430}

@@ -30,7 +30,6 @@ namespace Core.Scripts.Infrastructure.GameStateMachine.States
 
         public void Exit()
         {
-            m_UserInterfaceService.PopupService.CloseOpened();
             m_LevelService.ResetLevel();
             m_PoolService.Reset();
         }

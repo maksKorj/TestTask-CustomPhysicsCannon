@@ -1,3 +1,4 @@
+using System;
 using _Gameplay.Scripts.Shooting.PhysicsTypes.Custom;
 using Core.Scripts.Services.TickProcessor;
 using UnityEngine;
@@ -11,6 +12,8 @@ namespace _Gameplay.Scripts.Shooting.Projectiles.Movement
         private readonly ITickProcessorService m_TickProcessorService;
 
         private Vector3 m_Velocity;
+        
+        public event Action OnCollided;
 
         public CustomPhysicsMovementStrategy(Transform transform, CustomPhysicsSettings settings, ITickProcessorService tickProcessorService)
         {
@@ -18,6 +21,7 @@ namespace _Gameplay.Scripts.Shooting.Projectiles.Movement
             m_Settings = settings;
             m_TickProcessorService = tickProcessorService;
         }
+
 
         public void Launch(Vector3 velocity)
         {
@@ -58,6 +62,8 @@ namespace _Gameplay.Scripts.Shooting.Projectiles.Movement
         {
             m_Velocity = Vector3.Reflect(m_Velocity, hit.normal) * m_Settings.Bounciness;
             m_Transform.position = hit.point + hit.normal * 0.01f;
+            
+            OnCollided?.Invoke();
         }
     }
 }

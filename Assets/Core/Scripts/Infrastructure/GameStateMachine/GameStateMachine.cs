@@ -20,7 +20,6 @@ namespace Core.Scripts.Infrastructure.GameStateMachine
             {
                 [typeof(ResetState)] = new ResetState(this, serviceLocator),
                 [typeof(LoadState)] = new LoadState(this, serviceLocator),
-                [typeof(IdleState)] = new IdleState(this),
                 [typeof(ActiveGameplayState)] = new ActiveGameplayState(this, serviceLocator)
             };
 

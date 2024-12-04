@@ -1,5 +1,4 @@
 ﻿using Core.Scripts.Infrastructure.GameStateMachine.Base;
-using Core.Scripts.Popups.GameStart.Start;
 using Core.Scripts.Services;
 using Core.Scripts.Services.Level;
 using Core.Scripts.Services.UserInterface;
@@ -26,19 +25,12 @@ namespace Core.Scripts.Infrastructure.GameStateMachine.States
             var activeLevel = m_LevelService.ShowLevel();
             activeLevel.OnLoad();
 
-            m_UserInterfaceService.PopupService.OpenWithAction<PopupStart>(init);
+            m_StateMachine.Enter<ActiveGameplayState>();
         }
 
         public void Exit()
         {
             //
-        }
-
-        private void init(PopupStart popup) 
-        {
-            popup.Presenter.Setup(m_LevelService.CurrentLevel);
-
-            m_StateMachine.Enter<IdleState, PopupStart>(popup);
         }
     }
 }
